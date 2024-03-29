@@ -1,0 +1,1 @@
+select * from board_view order by idx desc
