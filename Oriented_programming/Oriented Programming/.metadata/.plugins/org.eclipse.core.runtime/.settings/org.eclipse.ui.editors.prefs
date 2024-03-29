@@ -1,0 +1,11 @@
+bookmarkIndicationColor=0,128,64
+eclipse.preferences.version=1
+fullcoverage_stylePreferences=NONE
+fullcoverage_text=false
+nocoverage_stylePreferences=NONE
+nocoverage_text=false
+org.eclipse.mylyn.java.hyperlink.detector.stack_stateMask=262144
+overrideIndicatorColor=0,0,0
+overviewRuler_migration=migrated_3.1
+partialcoverage_stylePreferences=NONE
+partialcoverage_text=false
