@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        nav {
+            background-color: yellow;
+        }
+
+        header {
+            background-color: red;
+            height: 50px;
+        }
+
+        main {
+            background-color: orange;
+            min-height: 300px;
+            padding: 15px;
+            display: flex;
+        }
+
+        article {
+            background-color: aqua;
+            width: 60%;
+            padding: 15px;
+        }
+
+        #one {
+            background-color: salmon;
+            height: 33%;
+        }
+
+        #two {
+            background-color: white;
+            height: 33%;
+        }
+
+        #three {
+            background-color: lawngreen;
+            height: 33%;
+        }
+
+        #left {
+            background-color: magenta;
+            width: 20%;
+        }
+
+        #right {
+            background-color: slategrey;
+            width: 20%;
+        }
+
+        footer {
+            background-color: green;
+            min-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--시멘틱 2.png 구현-->
+    <header>상단</header>
+    <nav>메뉴</nav>
+
+    <main>
+        <aside id="left">좌측 메뉴</aside>
+        <article>
+            컨텐츠 1
+            <section id="one">내용 1</section>
+            <section id="two">내용 2</section>
+            <section id="three">내용 3</section>
+        </article>
+
+        <aside id="right">우측 메뉴</aside>
+
+    </main>
+
+    <footer>하단</footer>
+
+</body>
+
+</html>

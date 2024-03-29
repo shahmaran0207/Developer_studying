@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz2.html</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 5px 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>REST 실습</h1>
+    <hr>
+
+    <table>
+        <thead>
+            <tr>
+                <th>idx</th>
+                <th>이름</th>
+                <th>이메일</th>
+                <th>휴대폰</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        let url = 'https://koreanjson.com/users';
+
+        fetch(url, {
+            method: 'get',
+        })
+            .then(response => response.json())  // json() 메서드가 반환한 Promise를 받아서
+            .then(data => {                     // json 형태의 데이터로 data 변수에 받아 이어 수행
+
+                console.log(data);
+
+                let msg = '';
+
+                for (let i = 0; i < data.length; i++) {
+                    console.log(`${i} : ${list[i].unitName} | ${list[i].addr} | ${list[i].weatherContents}`);
+
+                    msg +=
+                        `<tr>` +
+                        `<td>${i + 1}</td>` +
+                        `<td>${data[i].name}</td>` +
+                        `<td>${data[i].email}</td>` +
+                        `<td>${data[i].phone}</td>` +
+                        `</tr>`;
+                }
+
+                document.querySelector('tbody').innerHTML = msg;
+            });
+
+    </script>
+
+</body>
+
+</html>

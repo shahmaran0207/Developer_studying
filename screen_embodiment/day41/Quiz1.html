@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        #sum {
+            text-align: right;
+        }
+
+        .total {
+            background-color: rgba(128, 128, 128, 0.418);
+        }
+
+        .name {
+            background-color: rgba(128, 128, 128, 0.418);
+        }
+
+        .hong:hover {
+            background-color: black;
+            color: white
+        }
+
+        .park:hover {
+            background-color: rgba(128, 128, 128, 0.5);
+            color: black;
+        }
+
+        .go:hover {
+            background-color: black;
+            color: white
+        }
+
+        .lee:hover {
+            background-color: rgba(128, 128, 128, 0.5);
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>가상 선택자</h1>
+    <hr>
+
+    <table cellspacing="0" cellpadding="9">
+        <thead>
+            <tr class="name">
+                <th>학번</th>
+                <th>이름</th>
+                <th>성적</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr class="hong">
+                <td>20230101</td>
+                <td>홍길동</td>
+                <td>87</td>
+            </tr>
+
+            <tr class="park">
+                <td>20230102</td>
+                <td>박찬호</td>
+                <td>73</td>
+            </tr>
+
+            <tr class="go">
+                <td>20230103</td>
+                <td>고은진</td>
+                <td>91</td>
+            </tr>
+
+            <tr class="lee">
+                <td>20230101</td>
+                <td>이지수</td>
+                <td>68</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr class="total">
+                <th>합계</th>
+                <td></td>
+                <td>319</td>
+            </tr>
+        </tfoot>
+
+    </table>
+
+</body>
+
+</html>

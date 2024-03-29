@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th,
+        td {
+            padding: 5px 10px;
+        }
+        fieldset {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>예약정보</h1>
+    <hr>
+
+    <fieldset>
+        <legend>예약</legend>
+        <form>
+
+            <table border="0" cellpadding="3">
+                <tr>
+                    <td><label for="idname">이름 </label></td>
+                    <td><input name="name" id="idname" type="text" placeholder="이름 입력 필수" required></td>
+                </tr>
+
+                <tr>
+                    <td><label for="idcell">휴대폰 </label></td>
+                    <td><input name="cell" id="idcell" type="number" placeholder="번호를 -없이 입력"></td>
+                </tr>
+                <tr>
+                    <td><label for="idemail">이메일 입력 </label></td>
+                    <td><input name="email" id="idemail" type="email" placeholder="이메일 입력"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="iddate">날짜 </label></td>
+                    <td><input name="date" id="iddate" type="date"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="idhour">시간 </label></td>
+                    <td><input name="hour" id="idhour" type="time"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="iddate2">날짜2 </label></td>
+                    <td><input name="date2" id="iddate2" type="datetime-local"></td>
+                </tr>
+
+            </table>
+            <button>예약하기</button>
+            <button type="reset"> 다시 입력</button>
+
+        </form>
+    </fieldset>
+</body>
+
+</html>

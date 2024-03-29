@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 가이드</title>
+    <style>
+        body {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .head {
+            font-weight: bold;
+            display: flex;
+            align-items: end;
+            padding: 15px;
+        }
+
+        .head>img {
+            align-items: center;
+        }
+
+        #korea {
+            width: 20%;
+            text-align: center;
+        }
+
+        #guide {
+            width: 20%;
+            text-align: center;
+        }
+
+        #global {
+            width: 20%;
+            text-align: center;
+        }
+
+        #go {
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            /*  contain: 요소 안에 꽉 차게, 남는 너비 높이가 발생할 수 있음*/
+            background-repeat: no-repeat;
+            /*  repeat(기본), no-repeat */
+        }
+
+        .info1 {
+            width: 50%;
+            align-items: center;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .info2 {
+            width: 50%;
+            align-items: center;
+            text-align: center;
+        }
+
+        h3 {
+            align-items: center;
+            position: relative;
+            left: 200px;
+        }
+
+        .information {
+            height: 300px;
+            align-items: center;
+            padding: 10px;
+            display: flex
+        }
+
+        tbody>tr:nth-child(2n + 1) {
+            background-color: rgba(128, 128, 128, 0.534);
+        }
+
+        .icon {
+            display: flex;
+            align-items: center;
+            position: relative;
+            left: 80px;
+        }
+
+        footer {
+            background-color: rgb(67, 117, 224);
+            height: 200px;
+            width: 100%;
+            display: flex;
+            color: white;
+            position: relative;
+            bottom: 15px;
+        }
+
+        #intro {
+            padding: 20px;
+        }
+
+        #community {
+            padding: 20px;
+            position: relative;
+            left: 100px;
+        }
+
+        #personal {
+            padding: 20px;
+        }
+
+        #chigup {
+            padding: 20px;
+        }
+
+        #title {
+            align-items: center;
+            display: flex;
+        }
+
+        #naum {
+            width: 50%;
+            align-items: center;
+            position: relative;
+            top: 30px;
+            font-size: 25px;
+        }
+
+        #gongi {
+            width: 50%;
+            align-items: center;
+            position: relative;
+            top: 30px;
+            font-size: 25px;
+        }
+
+        #new {
+            width: 33%;
+        }
+
+        #music {
+            width: 33%;
+        }
+
+        #menual {
+            width: 33%;
+        }
+
+        #new>p {
+            background-color: grey;
+            color: white;
+            text-align: center;
+            border-radius: 7px;
+            height: 35px;
+            width: 120px;
+            position: relative;
+            left: 30px;
+            bottom: 25px;
+        }
+
+        #music>p {
+            background-color: grey;
+            color: white;
+            text-align: center;
+            border-radius: 7px;
+            height: 35px;
+            width: 120px;
+            position: relative;
+            left: 20px;
+            bottom: 25px;
+        }
+
+        #menual>p {
+            background-color: grey;
+            color: white;
+            text-align: center;
+            border-radius: 7px;
+            height: 35px;
+            width: 120px;
+            position: relative;
+            bottom: 25px;
+        }
+
+        #welcome {
+            align-items: center;
+            background-color: grey;
+            color: brown;
+            font-size: 30px;
+            font-weight: bold;
+            width: 650px;
+            border-radius: 30px;
+            position: relative;
+            bottom: 360px;
+            height: 50px;
+            left: 250px;
+            text-align: center;
+        }
+
+        #gegong {
+            height: 190px;
+            position: relative;
+            top: 20px;
+            left: 0px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="head">
+        <img src="img/Logo.png">
+        <div id="guide">여행 가이드 소개</div>
+        <div id="korea">국내 여행지</div>
+        <div id="global">해외 여행지</div>
+    </div>
+
+
+    <section class="body">
+        <img src="img/first.jpg" id="go">
+        <div id="welcome">여행 가이드에 오신 것을 환영합니다.</div>
+    </section>
+
+    <section id="title">
+        <h3 id="gongi">공지사항</h3>
+        <h3 id="naum">정보 나눔</h3>
+    </section>
+
+
+    <section class="information">
+        <article class="info1">
+            <table cellspacing="0" cellpadding="10">
+                <thead>
+                    <tr>
+                        <th>내용</th>
+                        <th>날짜</th>
+                    </tr>
+                </thead>
+
+                <tbody class="content">
+                    <tr>
+                        <td>다도해 풍광을 한눈에..해남 땅끝 해안 누리길 여행하기</td>
+                        <td>2018-01-10</td>
+                    </tr>
+
+                    <tr>
+                        <td>국토 순례 기차여행에 참가하는 학교, 청소년 단체 등...</td>
+                        <td>2017-12-21</td>
+                    </tr>
+
+                    <tr>
+                        <td>설악산 1월 초 설경 절정, 기차 여행 상품이 출시도었...</td>
+                        <td>2017-12-25</td>
+                    </tr>
+
+                    <tr>
+                        <td>여행 가이드가 추천하는 국내 겨울 여행지 & 관광열차</td>
+                        <td>2017-12-07</td>
+                    </tr>
+
+                    <tr>
+                        <td>신나는 겨울여행 대관령 눈꽃축제, 고니골 빛축제로</td>
+                        <td>2017-12-01</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </article>
+
+        <article class="info2">
+            <img src="img/info.png" id="gegong">
+        </article>
+    </section>
+
+    <section class="icon">
+        <div id="new">
+            <img src="img/새소식.png">
+            <p>새소식</p>
+        </div>
+
+        <div id="music">
+            <img src="img/여행음악.png">
+            <p>여행 음악</p>
+        </div>
+
+        <div id="menual">
+            <img src="img/여행매뉴얼.png">
+            <p>여행 메뉴얼</p>
+        </div>
+
+    </section>
+
+</body>
+
+<footer>
+    <p id="legal">
+        법적고지
+    </p>
+
+    <p id="chigup">
+        개인정보취급방침
+    </p>
+
+    <p id="personal">
+        개인정보처리방침
+    </p>
+
+    <p id="company">
+        상호명(주) 앤윤컴퍼니<br>
+        대표자: 윤정우<br>
+        개인정보처리관리책임자: 김선정<br>
+        상담전화: 1588-0789<br>
+        사업장주소: 서울특별시 금천구 가산동 가산디지털 2로
+    </p>
+
+</footer>
+
+</html>

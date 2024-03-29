@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>그래프 종류</h1>
+    <hr>
+    <h4>파이(pie) 그래프</h4>
+
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        labels: ['java', 'C/C++', 'C#', 'javaScript', 'python', 'php']
+        let data = [12, 19, 3, 5, 2, 3];
+        let backgroundColor = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff']
+
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: label,
+                datasets: [{
+                    label: '언어 투표',
+                    data: data,
+                    borderWidth: 1,
+                    borderColor: 'black',
+                    backgroundColor: backgroundColor           
+                     // ※ 배경색을 안주는게 더 편하다.
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <h1>상품 주문서</h1>
+    <hr>
+
+    <form>
+        <fieldset>
+            <table>
+                <tr>
+                    <legend>개인정보</legend>
+                    <td><label for="nid">이름</label></td>
+                    <td><input name="name" id="nid" type="text" placeholder="여백 없이 입력"></td>
+                </tr>
+                <tr>
+                    <td><label for="nph">연락처</label></td>
+                    <td> <input name="ph" id="nph" type="text" placeholder="연락 가능한 번호"></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>배송지 정보</legend>
+            <table>
+                <tr>
+                    <td><label for="nadd">주소</label></td>
+                    <td> <input name="add" id="nadd" type="text"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="ncell">전화번호</label></td>
+                    <td> <input name="cell" id="ncell" type="text"></td>
+                </tr>
+
+                <tr>
+                    <td>메모</td>
+                    <td>
+                        <textarea cols="40" rows="0"></textarea>
+                    </td>
+                </tr>
+
+            </table>
+        </fieldset>
+
+        <fieldset id="specialFieldset ">
+            <legend>주문 정보</legend>
+            <table cellpadding="5">
+                <tr>
+                    <td>
+                        <input name="gota" id="ngota" type="checkbox"> 과테말라 안티구아 (100g)
+                        <input type="number" value="0">개
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <input name="india" id="nv" type="checkbox"> 인도네시아 만델리 (100g)
+                        <input type="number" value="0">개
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <input name="doda" id="ndoda" type="checkbox"> 탐라는도다(블렌딩)(100g)
+                        <input type="number" value="0">개
+                    </td>
+
+                </tr>
+            </table>
+        </fieldset>
+
+        <p>
+            <button>주문하기</button>
+            <button type="reset">다시 작성</button>
+        </p>
+    </form>
+</body>
+
+</html>

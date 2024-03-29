@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 10px 0;
+            padding: 10px 20px;
+        }
+
+        #content{
+            box-sizing: content-box; /*기본값: → 굳이 적을 필요는 없다*/
+        }
+
+        #border{
+            box-sizing: border-box;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    <h1>Box의 크기</h1>
+    <hr>
+
+    <ol>
+        <li>content-box :   content에만 width / height를 적용</li>
+        <li>border-box  :   border까지 width /height로 계산 적용</li>
+    </ol>
+
+    <div    id="content">Hello</div>
+    <div    id="border">Hello</div>
+    
+    <p>※ 테두리까지 범위로 계산하는 것이 편하다.</p>
+
+</body>
+
+</html>
