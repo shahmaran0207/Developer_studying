@@ -1,8 +1,8 @@
 package controller;
 
 import java.io.IOException;
-import java.sql.ResultSet;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,36 +10,42 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.DAO;
-import model.Mapper;
-import model.vo.BoardVO;
 
 @WebServlet("/board")
-public class BoardController extends HttpServlet{
-	private static final long serialVersionUID = 1123L;
-	private Mapper<BoardVO> mp = (ResultSet rs) -> {
-		BoardVO row = new BoardVO();
+public class BoardController extends HttpServlet {
 
-		row.setContents(rs.getString("contents"));
-		row.setIdx(rs.getInt("contents"));
-		row.setTitle(rs.getString("title"));
-
-		return row;
-	};
+	private static final long serialVersionUID = 300L;
+	private String path = "/WEB-INF/board/";
 	
-	 @Override
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
+			throws ServletException, IOException {
+
+		RequestDispatcher rd;
+		rd = req.getRequestDispatcher(path + "write.jsp");
+		
+		rd.forward(req, resp);
+	}
+	
+	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
-		 
-		 
-	 
-		 String sql="insert into "
-				 +"board(title, contents, user_idx) "
-				 +"values(?, ?, ?)";
-		 
-		 DAO dao=new DAO();
-		 
-		 req.setAttribute("insert", dao.query(sql, mp));
-		 
-		 
-	 }
+		// ������ �Է��� ������ �ޱ�
+		String title = req.getParameter("title");
+		String contents = req.getParameter("contents");
+		int user_idx = Integer.parseInt(req.getParameter("user_idx"));
+
+		String sql = "insert into "
+				+ "board(title, contents, user_idx) "
+				+ "values(?, ?, ?)";
+		
+		DAO dao = new DAO();
+		int row = dao.update(sql, title, contents, user_idx);
+		
+		System.out.println(row == 0 ? "����" : "����");
+		
+		String cpath=req.getContextPath();
+		resp.sendRedirect(cpath);
+	}
+	
 }

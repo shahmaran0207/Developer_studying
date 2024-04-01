@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="header.jsp" %>
 <main class="home">
-<%@ include file="sidemenu.jsp" %>
+<%@ include file="sideMenu.jsp" %>
 
 <article>
 	<table class="board">
@@ -28,6 +28,11 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	
+	<br>
+<a href="${cpath }/board">
+<button>d</button>
+</a>
 	
 </article>
 </main>
