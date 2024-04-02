@@ -6,6 +6,10 @@ public class Paging {
 	private int reqPage;
 	private int offset;
 	private int totalPage;
+	private int section;
+	private int betgin;
+	private int end;
+	private int pageount=10;
 
 	public Paging(int reqPage, int totalBoard) {
 		this.reqPage = reqPage;
@@ -55,6 +59,38 @@ public class Paging {
 
 	public void setOffset(int offset) {
 		this.offset = offset;
+	}
+
+	public int getSection() {
+		return section;
+	}
+
+	public void setSection(int section) {
+		this.section = section;
+	}
+
+	public int getBetgin() {
+		return betgin;
+	}
+
+	public void setBetgin(int betgin) {
+		this.betgin = betgin;
+	}
+
+	public int getEnd() {
+		return end;
+	}
+
+	public void setEnd(int end) {
+		this.end = end;
+	}
+
+	public int getPageount() {
+		return pageount;
+	}
+
+	public void setPageount(int pageount) {
+		this.pageount = pageount;
 	}
 
 }
