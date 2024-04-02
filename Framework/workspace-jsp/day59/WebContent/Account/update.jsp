@@ -1,20 +1,22 @@
-<%@page import="service.Hash"%>
+<%@page import="service.Hashpw"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="header.jsp" %>
 
-	<% request.setCharacterEncoding("utf-8"); %>
+	<%
+		request.setCharacterEncoding("utf-8");
+	%>
 	
 	<jsp:useBean id="acc" class="model.vo.AccountVO"/>
 	<jsp:setProperty property="*" name="acc"/>
 	
 	<%
-		Hash hash = new Hash();
-		String hashPw = hash.getHash(acc.getUserpw());
-	
-		acc.setUserpw(hashPw);
-		int row = dao.update(acc);
-	%>
+			Hashpw hash = new Hashpw();
+				String hashPw = hash.getHash(acc.getUserpw());
+			
+				acc.setUserpw(hashPw);
+				int row = dao.update(acc);
+		%>
 
 	<script>
 		let result = <%=row %>;

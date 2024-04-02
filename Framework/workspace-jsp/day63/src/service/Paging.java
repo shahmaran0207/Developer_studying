@@ -111,5 +111,4 @@ public class Paging {
 	public void setPrev(boolean prev) {
 		this.prev = prev;
 	}
-
 }

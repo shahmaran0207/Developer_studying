@@ -38,8 +38,9 @@ public class HomeController extends HttpServlet {
 		
 		String sql = "select * from board_view order by idx desc";
 		DAO dao = new DAO();
-		
+
 		req.setAttribute("list", dao.query(sql, mp));
+		
 		
 		RequestDispatcher rd;
 		rd = req.getRequestDispatcher("/WEB-INF/home.jsp");

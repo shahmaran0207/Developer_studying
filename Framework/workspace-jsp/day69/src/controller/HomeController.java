@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.sql.ResultSet;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.DAO;
 import model.Mapper;
 import model.vo.BoardVO;
+import service.Paging;
 
 @WebServlet("/home")
 public class HomeController extends HttpServlet {
@@ -32,14 +34,46 @@ public class HomeController extends HttpServlet {
 		return row;
 	};
 	
+	private Mapper<Integer> bmp = (ResultSet rs) -> {
+		int boardCount = rs.getInt("total");
+		
+		return boardCount;
+	};
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
+		// 1. ����ڰ� ��û�� ������ ��ȣ
+		String reqPage = req.getParameter("reqPage");
+		int rp = 1;
 		
-		String sql = "select * from board_view order by idx desc";
+		if (reqPage != null) {
+			rp = Integer.parseInt(reqPage);
+		}
+		
+		
+		// 2. board ���̺� ��ü �Խñ� �� 
 		DAO dao = new DAO();
 		
-		req.setAttribute("list", dao.query(sql, mp));
+		String bcnt = "select count(*) as total from board"; 
+		List<Integer> boardCount = dao.query(bcnt, bmp);
+		
+		int bc = boardCount.get(0);
+		
+		
+		// 3. 1 ~ 2번으로 페이징 진행
+		Paging pg = new Paging(rp, bc);
+		
+		
+		String sql = "select * from board_view "
+					+ "order by idx desc "
+					+ "offset ? rows "
+					+ "fetch first ? rows only";
+		
+		
+		//4. 테이블과 페이징을 지정 jsp로 전달
+		req.setAttribute("list", dao.query(sql, mp, pg.getOffset(), pg.getBoardCount()));
+		req.setAttribute("pg",  pg);
 		
 		RequestDispatcher rd;
 		rd = req.getRequestDispatcher("/WEB-INF/home.jsp");

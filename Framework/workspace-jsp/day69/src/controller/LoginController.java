@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import model.DAO;
 import model.Mapper;
 import model.vo.AccountVO;
+import service.HashPw;
 
 @WebServlet("/account/login")
 public class LoginController extends HttpServlet {
@@ -56,6 +57,8 @@ public class LoginController extends HttpServlet {
 		String cpath = req.getContextPath();
 		String userid = req.getParameter("userid");
 		String userpw = req.getParameter("userpw");
+		
+		userpw = HashPw.getHash(userpw);
 		
 		DAO dao = new DAO();
 		AccountVO user = dao.queryForObject(sql, mp, userid, userpw);

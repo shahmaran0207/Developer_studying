@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.DAO;
-import model.vo.AccountVO;
 import service.HashPw;
 
 @WebServlet("/account/signUp")
@@ -46,7 +45,7 @@ public class SignUpController extends HttpServlet {
 				+ "account(userid, userpw, nick, email) "
 				+ "values(?, ?, ?, ?)";
 		
-		int row = dao.update(sql, userid, userpw, nick, email);
+		dao.update(sql, userid, userpw, nick, email);
 		String cpath = req.getContextPath();
 		
 		resp.sendRedirect(cpath);

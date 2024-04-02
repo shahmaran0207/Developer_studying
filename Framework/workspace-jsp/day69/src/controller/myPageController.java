@@ -2,7 +2,6 @@ package controller;
 
 import java.io.IOException;
 import java.sql.ResultSet;
-import java.util.UUID;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,12 +14,14 @@ import javax.servlet.http.HttpSession;
 import model.DAO;
 import model.Mapper;
 import model.vo.AccountVO;
+import service.HashPw;
 
-@WebServlet("/account/findpw")
-public class finpwController extends HttpServlet {
-
-	private static final long serialVersionUID = 700L;
+@WebServlet("/account/myPage")
+public class myPageController extends HttpServlet{
+	private static final long serialVersionUID = 875L;
+	
 	private String path = "/WEB-INF/account/";
+	
 	private Mapper<AccountVO> mp = (ResultSet rs) -> {
 		AccountVO row = new AccountVO();
 		
@@ -34,13 +35,12 @@ public class finpwController extends HttpServlet {
 		return row;
 	};
 	
-	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
-
+		
 		RequestDispatcher rd;
-		rd = req.getRequestDispatcher(path + "findpw.jsp");
+		rd = req.getRequestDispatcher(path + "myPage.jsp");
 		
 		rd.forward(req, resp);
 	}
@@ -48,26 +48,24 @@ public class finpwController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
-		
-		String sql="select * from account where userid=? and email = ?";
-		String userid=req.getParameter("userid");
-		String email=req.getParameter("email");
-		
-		DAO dao=new DAO();
-		AccountVO row=dao.queryForObject(sql,  mp, userid, email);
-		
-		String newpw=UUID.randomUUID().toString().substring(0, 6);
+		String sql = "select * from account where userid = ? and userpw = ?";
 
-		if(row == null) {
-			newpw="일치하는 데이터가 없습니다.";
+		HttpSession session = req.getSession();
+		
+		String cpath = req.getContextPath();
+		String userid = req.getParameter("userid");
+		String userpw = req.getParameter("userpw");
+		
+		userpw = HashPw.getHash(userpw);
+		
+		DAO dao = new DAO();
+		AccountVO user = dao.queryForObject(sql, mp, userid, userpw);
+		
+		if (user != null) {
+			session.setAttribute("user", user);
 		}
 		
-		
-		req.setAttribute("newpw",  newpw);
-		
-		RequestDispatcher rd;
-		rd = req.getRequestDispatcher(path + "msg.jsp");
-		
-		rd.forward(req, resp);
+		resp.sendRedirect(cpath);
 	}
+
 }

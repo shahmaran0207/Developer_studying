@@ -28,7 +28,7 @@ public class DAO {
 			ds = (DataSource) ct.lookup("java:comp/env/jdbc/oracle");
 			
 		} catch (NamingException e) {
-			System.out.println("»ı¼ºÀÚ ¿¹¿Ü : " + e.getMessage());
+			System.out.println("ìƒì„±ì ì˜ˆì™¸ : " + e.getMessage());
 			
 		} finally {
 			close();
@@ -58,7 +58,7 @@ public class DAO {
 			return rs.getString("banner");
 			
 		} catch (SQLException e) {
-			System.out.println("test ¿¹¿Ü : " + e.getMessage());
+			System.out.println("test ï¿½ï¿½ï¿½ï¿½ : " + e.getMessage());
 			
 		} finally {
 			close();
@@ -83,7 +83,7 @@ public class DAO {
 			return list;
 			
 		} catch(SQLException e) {
-			System.out.println("query ¿¹¿Ü : " + e.getMessage());
+			System.out.println("query ï¿½ï¿½ï¿½ï¿½ : " + e.getMessage());
 			
 		} finally {
 			close();
@@ -105,7 +105,7 @@ public class DAO {
 			return pstmt.executeUpdate();
 			
 		} catch (SQLException e) {
-			System.out.println("update ¿¹¿Ü : " + e.getMessage());
+			System.out.println("update ï¿½ï¿½ï¿½ï¿½ : " + e.getMessage());
 			
 		} finally {
 			close();

@@ -28,7 +28,7 @@ public class DAO {
 			ds = (DataSource) ct.lookup("java:comp/env/jdbc/oracle");
 			
 		} catch (NamingException e) {
-			System.out.println("»ı¼ºÀÚ ¿¹¿Ü : " + e.getMessage());
+			System.out.println("ìƒì„±ì ì˜ˆì™¸ : " + e.getMessage());
 			
 		} finally {
 			close();
@@ -58,7 +58,7 @@ public class DAO {
 			return rs.getString("banner");
 			
 		} catch (SQLException e) {
-			System.out.println("test ¿¹¿Ü : " + e.getMessage());
+			System.out.println("test ì˜ˆì™¸ : " + e.getMessage());
 			
 		} finally {
 			close();
@@ -83,7 +83,7 @@ public class DAO {
 			return list;
 			
 		} catch(SQLException e) {
-			System.out.println("query ¿¹¿Ü : " + e.getMessage());
+			System.out.println("query ì˜ˆì™¸ : " + e.getMessage());
 			
 		} finally {
 			close();
@@ -92,6 +92,36 @@ public class DAO {
 		return null;
 	}
 
+	public <T> List<T> query(String sql, Mapper<T> mp, Object... args) {
+		
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			
+			for (int i = 0; i < args.length; i++) {
+				pstmt.setObject(i + 1, args[i]);
+			}
+			
+			rs = pstmt.executeQuery();
+			
+			List<T> list = new ArrayList<T>();
+			
+			while (rs.next()) {
+				list.add(mp.maping(rs));
+			}
+			
+			return list;
+			
+		} catch(SQLException e) {
+			System.out.println("query ì˜ˆì™¸ : " + e.getMessage());
+			
+		} finally {
+			close();
+		}
+		
+		return null;
+	}
+	
 	public <T> T queryForObject(String sql, Mapper<T> mp, Object... args) {
 		
 		try {
@@ -108,7 +138,7 @@ public class DAO {
 			return mp.maping(rs);
 			
 		} catch (SQLException e) {
-			System.out.println("queryForObject ¿¹¿Ü : " + e.getMessage());
+			System.out.println("queryForObject ï¿½ï¿½ï¿½ï¿½ : " + e.getMessage());
 			
 		} finally {
 			close();
@@ -130,7 +160,7 @@ public class DAO {
 			return pstmt.executeUpdate();
 			
 		} catch (SQLException e) {
-			System.out.println("update ¿¹¿Ü : " + e.getMessage());
+			System.out.println("update ï¿½ï¿½ï¿½ï¿½ : " + e.getMessage());
 			
 		} finally {
 			close();

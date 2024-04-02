@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ include file="../header.jsp" %>
+	pageEncoding="UTF-8"%>
+<%@ include file="../header.jsp"%>
 
 <main>
 	<form action="updatePro.jsp" method="POST">
@@ -24,7 +24,8 @@
 				</tr>
 				<tr>
 					<th>이메일</th>
-					<td><input name="email" value="${user.email }" type="email" required></td>
+					<td><input name="email" value="${user.email }" type="email"
+						required></td>
 				</tr>
 				<tr>
 					<th>가입일</th>
@@ -32,17 +33,15 @@
 				</tr>
 			</tbody>
 		</table>
-		
-		<br>
-		
-		<input name="idx" type="hidden" value="${user.idx }">
-		
+
+		<br> <input name="idx" type="hidden" value="${user.idx }">
+
 		<button>수정</button>
-		
+
 		<a href="${cpath }/account/delete.jsp?idx=${user.idx }">
 			<button type="button">탈퇴</button>
 		</a>
 	</form>
 </main>
 
-<%@ include file="../footer.jsp" %>
+<%@ include file="../footer.jsp"%>

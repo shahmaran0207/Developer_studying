@@ -8,9 +8,13 @@
 </head>
 <body>
 
+
 <script>
-	alert('${newpw }');
-	location.href('${cpath }')
+	alert('${newPw}');
+	location.href = '${cpath}';
+	
+	alert('${newPw}');
+	location.href = '${cpath}';
 </script>
 
 </body>

@@ -55,5 +55,13 @@ article {
 	width: 20%;
 }
 
+.w70{
+	width: 70%;
+	margin: 0 auto;
+}
+
+.board tr:nth-last-child(1) > td{
+	border: 0;
+}
 
 

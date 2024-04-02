@@ -37,7 +37,7 @@ public class BoardDAO extends DAO {
 			return rs.getInt("count");
 			
 		} catch (SQLException e) {
-			System.out.println("totalBoard ���� : " + e.getMessage());
+			System.out.println("totalBoard 예외 : " + e.getMessage());
 			
 		} finally {
 			close();
@@ -127,7 +127,7 @@ public class BoardDAO extends DAO {
 			return mapper(rs);
 			
 		} catch (SQLException e) {
-			System.out.println("selectOne ���� : " + e.getMessage());
+			System.out.println("selectOne 예외 : " + e.getMessage());
 			
 		} finally {
 			close();
@@ -172,7 +172,7 @@ public class BoardDAO extends DAO {
 			return pstmt.executeUpdate();
 			
 		} catch (SQLException e) {
-			System.out.println("delete ���� : " + e.getMessage());
+			System.out.println("delete 예외 : " + e.getMessage());
 		}
 		
 		return 0;
