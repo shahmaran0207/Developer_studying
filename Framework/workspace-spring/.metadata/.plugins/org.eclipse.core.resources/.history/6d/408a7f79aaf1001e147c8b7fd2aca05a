@@ -1,0 +1,16 @@
+package com.itbank.day71;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+public class EXController {
+//	@RequestMapping(value="/EX01", method=RequestMethod.GET)
+	
+	@GetMapping("/ex01")
+	public String ex01() {
+		return "EX01";
+	}
+}

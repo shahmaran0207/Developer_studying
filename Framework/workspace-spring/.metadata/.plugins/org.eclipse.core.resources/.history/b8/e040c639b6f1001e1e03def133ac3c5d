@@ -1,0 +1,7 @@
+package com.itbank.model.vo;
+
+public class PersonVO {
+	private String name;
+	private double height;
+	private Date date;
+}

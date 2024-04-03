@@ -1,0 +1,10 @@
+package com.itbank.model.vo;
+
+import java.sql.Date;
+
+public class PersonVO {
+	private String name;
+	private double height;
+	private Date date;
+	
+}

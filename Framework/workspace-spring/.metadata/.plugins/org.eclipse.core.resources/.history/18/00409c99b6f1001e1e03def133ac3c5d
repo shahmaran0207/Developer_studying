@@ -1,0 +1,26 @@
+package com.itbank.Controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.itbank.model.vo.PersonVO;
+
+@Controller
+@RequestMapping("/EX04")
+public class EX04Controller {
+	
+	@GetMapping("/test1")	//EX04/test1 으로 요청이 들어오면 실행
+	public void test1() {}	//void는 요청 uri가 view 이름이 된다.
+							// 즉, /WEB-INF/views/EX04/test1.jsp로 포워드
+	
+	@PostMapping("/test1")
+	public String test1(Model model, PersonVO per) {
+		
+		
+		return "EX04/test1_result";
+	}
+
+}

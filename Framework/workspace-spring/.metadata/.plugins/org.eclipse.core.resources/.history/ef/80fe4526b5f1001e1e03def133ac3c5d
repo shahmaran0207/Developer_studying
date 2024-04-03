@@ -1,0 +1,16 @@
+package com.itbank.Controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/EX04")
+public class EX04Controller {
+	
+	@GetMapping("/test1")	//EX04/test1 으로 요청이 들어오면 실행
+	public void test1() {}	
+	
+	
+
+}

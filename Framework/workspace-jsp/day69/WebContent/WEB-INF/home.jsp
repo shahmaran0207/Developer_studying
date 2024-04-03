@@ -30,10 +30,16 @@
 			</tbody>
 		</table>
 
-		<ul>
-			<c:forEach var="i" begin="1" end="${pg.totalPage }">
+		<ul class="menu page">
+			<c:if test="${pg.prev }">
+				<li><a href="${cpath }/?reqPage=${pg.begin-1}">이전</a></li>
+			</c:if>
+			<c:forEach var="i" begin="${pg.begin }" end="${pg.end }">
 				<li><a href="${cpath }/?reqPage=${i}">${i }</a></li>
 			</c:forEach>
+			<c:if test="${pg.next }">
+				<li><a href="${cpath }/?reqPage=${pg.end+1}">다음</a></li>
+			</c:if>
 		</ul>
 
 	</article>

@@ -1,0 +1,15 @@
+package com.itbank.day71;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class EXController {
+//	@RequestMapping(value="/EX01", method=RequestMethod.GET)
+//	- spring 3.x버전까지는 위의 방식으로URI 매칭했음
+	
+	@GetMapping("/EX01")		//GetMapping()은 4.x 이후부터 적용된 것
+	public String ex01() {
+		return "EX01";
+	}
+}

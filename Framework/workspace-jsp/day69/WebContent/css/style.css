@@ -55,6 +55,14 @@ article {
 	width: 20%;
 }
 
+.page{
+	justify-content: center;
+}
+
+menu li{
+	margin: 0 10px;
+}
+
 .w70{
 	width: 70%;
 	margin: 0 auto;
