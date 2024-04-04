@@ -1,0 +1,5 @@
+package com.itbank.controller.model.vo;
+
+public class AccountVO {
+	private String userid, userpw, nick;
+}

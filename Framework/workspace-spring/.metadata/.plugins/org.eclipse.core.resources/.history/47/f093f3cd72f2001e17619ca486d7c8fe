@@ -1,0 +1,21 @@
+package com.itbank.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class Ex01Controller {
+
+	@GetMapping("/ex01")
+	public void ex01() {}
+	
+	@PostMapping
+	pubblic ModelAndView EX01(AccountVO input) {
+		
+	}
+	
+	@GetMapping("/index")
+	public void index() {}
+}

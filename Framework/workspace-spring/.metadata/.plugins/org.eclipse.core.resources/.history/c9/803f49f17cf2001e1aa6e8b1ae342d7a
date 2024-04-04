@@ -1,0 +1,26 @@
+package com.itbank.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class QuizController {
+	@Autowired
+	private QuizService qs;
+	
+	@GetMapping("/Quiz")
+	public void Quiz() {}
+	
+	@PostMapping("/Quiz")
+	public ModelAndView Quiz(AccountVO input) {
+		
+		ModelAndView mav=new ModelAndView();
+		mav.addObject("msg", es.login(input)); //현재 es즉, 서비스가 null -> 근데 필드를 사용하려 하니 오류가 터짐!
+												// Autowired 안썼을 때 터지는 것!
+		mav.setViewName("EX02_result");
+		return  mav;
+	}
+}

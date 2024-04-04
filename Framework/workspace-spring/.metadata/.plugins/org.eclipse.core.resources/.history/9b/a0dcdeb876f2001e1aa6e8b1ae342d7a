@@ -1,0 +1,26 @@
+package com.itbank.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.itbank.model.vo.AccountVO;
+import com.itbank.service.EX02Service;
+
+@Controller
+public class Ex02Controller {
+	private EX02Service es;
+	
+	@GetMapping("/ex02")
+	public void ex02() {}
+	
+	@PostMapping("/ex02")
+	public ModelAndView ex02(AccountVO input) {
+		es=new EX02Service();
+		System.out.println(input.getUserid());
+		System.out.println(input.getUserpw());
+		
+		return null;
+	}
+}

@@ -1,0 +1,58 @@
+package com.itbank.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.itbank.controller.model.vo.AccountVO;
+
+@Controller
+public class Ex01Controller {
+
+	@GetMapping("/ex01")
+	public void ex01() {}
+	
+	@PostMapping
+	public ModelAndView EX01(AccountVO input) {
+
+		//1. 개발자가 구현하려는 기능(=로직)을 작성한다.
+		AccountVO user=new AccountVO("itbank", "it", "아뱅");
+		String msg="로그인 실패";
+		if(user.equals(input)) {
+			msg=user.getNick()+"님 로그인 성공!";
+		}
+		
+		//2. view에서 출력할 정보를 Attribute에 담는다.
+		
+		ModelAndView mav=new ModelAndView();
+		
+		mav.addObject("msg", msg);
+		mav.setViewName("EX01_result");
+		
+		return null;
+	}
+	
+	@GetMapping("/index")
+	public void index() {}
+	
+	@GetMapping("/index")
+	public ModelAndView EX01(AccountVO input) {
+
+		//1. 개발자가 구현하려는 기능(=로직)을 작성한다.
+		AccountVO user=new AccountVO("itbank", "it", "아뱅");
+		String msg="로그인 실패";
+		if(user.equals(input)) {
+			msg=user.getNick()+"님 로그인 성공!";
+		}
+		
+		//2. view에서 출력할 정보를 Attribute에 담는다.
+		
+		ModelAndView mav=new ModelAndView();
+		
+		mav.addObject("msg", msg);
+		mav.setViewName("EX01_result");
+		
+		return null;
+	}
+}

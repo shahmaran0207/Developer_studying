@@ -1,0 +1,18 @@
+package com.itbank.service;
+
+import com.itbank.model.vo.AccountVO;
+
+public class QuizService {
+	AccountVO[] acc=new AccountVO[](("itbank", "it", "아뱅"), ("itbank2", "it2", "아뱅2"),("itbank3", "it3", "아뱅3"));
+	
+	public String login(AccountVO input) {
+		String msg="로그인 실팽";
+		
+		if(acc.equals(input)) {
+			msg=acc.getNick()+"님 로그인 성공";
+		}
+		
+		return msg;
+	}
+
+}
