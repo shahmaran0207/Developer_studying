@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.itbank.model.vo.BoardVO;
+import com.itbank.service.Paging;
 
 @Repository
 public class BoardDAO {
@@ -29,53 +30,68 @@ public class BoardDAO {
 		return row;
 	};
 
-	public List<BoardVO> selectAll() {
+	public List<BoardVO> selectAll(Paging pg) {
 		String sql = "select * from board_view "
-				+"order by idx desc offset 0 rows fetch first 10 rows only";
-		return jt.query(sql, mp);
+						+ "order by idx desc "
+						+ "offset ? rows "
+						+ "fetch first ? rows only";
+		
+		int offset = pg.getOffset();
+		int perCount = pg.getPerCount();
+		
+		return jt.query(sql, mp, offset, perCount);
 	}
-	
+
 	public int insert(BoardVO input) {
 		String sql = "insert into "
 				+ "board(title, contents, user_idx) "
 				+ "values(?, ?, ?)";
 		
 		String title = input.getTitle();
-		String content=input.getContents();
-		int useridx=input.getUser_idx();
+		String contents = input.getContents();
+		int user_idx = input.getUser_idx();
 		
-		return jt.update(sql, title, content, useridx);
+		return jt.update(sql, title, contents, user_idx);
 	}
-	
+
 	public BoardVO selectOne(int idx) {
-		String sql="select * from board_view where idx= ?";
+		String sql = "select * from board_view where idx = ?";
 		
-		return jt.queryForObject(sql,  mp, idx);
+		return jt.queryForObject(sql, mp, idx);
 	}
-	
+
 	public int delete(int idx) {
-		String sql="delete from board where idx= ?";
+		String sql = "delete from board where idx = ?";
 		
 		return jt.update(sql, idx);
 	}
 
-	public int update (BoardVO input) {
-		String sql = "update "
-				+ "board(title, contents) "
-				+ "values(?, ?) "
-				+ "where user_idx= ?";
+	public int update(BoardVO input) {
+		String sql = "update board "
+						+ "set "
+							+ "title = ?, "
+							+ "contents = ? "
+						+ "where idx = ?";
 		
 		String title = input.getTitle();
-		String content=input.getContents();
-		int useridx=input.getUser_idx();
+		String contents = input.getContents();
+		int idx = input.getIdx();
 		
-		return jt.update(sql, title, content, useridx);
+		return jt.update(sql, title, contents, idx);
 	}
-
-	public int viewup(int idx) {
-		String sql = "update board set view_count = view_count+1 " 
-					+ "    where idx = ?";
+	
+	public int viewUp(int idx) {
+		String sql = "update board "
+				+ "set v_count = v_count + 1 "
+				+ "where idx = ?";
 		
 		return jt.update(sql, idx);
+	}
+
+	
+	public int totalBoard() {
+		String sql = "select count(*) as total from board";
+		
+		return jt.queryForObject(sql, Integer.class);
 	}
 }
