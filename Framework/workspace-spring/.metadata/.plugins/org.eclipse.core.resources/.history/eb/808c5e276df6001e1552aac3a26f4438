@@ -1,0 +1,22 @@
+package com.itbank.day75;
+
+import org.junit.Test;
+
+public class EX02Test {
+
+	private int num;
+	
+	@org.junit.Before		//@test들 마다 먼저 수행되는 코드
+	public void seNum() {
+		System.out.println("before 수행");
+		num=10;
+	}
+	
+	@Test
+	public void run1() {
+		System.out.println("run1 실행");
+		
+		num+=2;
+		System.out.println("run1의 num= "+num);
+	}
+}

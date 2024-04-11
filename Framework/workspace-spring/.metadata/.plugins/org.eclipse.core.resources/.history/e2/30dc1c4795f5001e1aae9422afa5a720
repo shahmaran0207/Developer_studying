@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="../header.jsp" %>
+
+	<ul>
+		<li>{row.idx }</li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+				<td>$</td>
+				<td><a href="${cpath }/board/view/${row.idx}">${row.title }</a></td>
+				<td>${row.nick }</td>
+				<td>${row.v_count }</td>
+				<td>${row.w_date }</td>
+			</tr>
+		</c:forEach>
+	</tbody>
+</table>
+
+</body>
+</html>

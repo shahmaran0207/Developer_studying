@@ -1,0 +1,11 @@
+package com.itbank.day75;
+
+import org.junit.Test;
+
+public class EX02Test {
+
+	@Test
+	public void run1() {
+		System.out.println("run1 실행");
+	}
+}

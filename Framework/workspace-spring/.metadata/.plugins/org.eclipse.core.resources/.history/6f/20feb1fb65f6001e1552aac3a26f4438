@@ -1,0 +1,27 @@
+package com.itbank.DI;
+
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+import com.itbank.beans.Toy;
+
+// 스프링을 활용한 코드
+public class Ex02 {
+	public static void main(String[] args) {
+		String path = "classpath:appCtx.xml";
+		
+		GenericXmlApplicationContext gxac;
+		gxac = new GenericXmlApplicationContext(path);
+		
+		Toy t1 = gxac.getBean(Toy.class);
+		
+		t1.run();
+		
+		
+		Toy t2=gxac.getBean(t1, Toy.class);
+		System.out.println("t1 = " + t1);
+		
+		
+		
+		gxac.close();
+	}
+}

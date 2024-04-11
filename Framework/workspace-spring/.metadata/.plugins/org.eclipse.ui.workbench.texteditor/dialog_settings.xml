@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="pop"/>
+		<item key="selection" value="4.7"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="4.7"/>
+			<item value="root"/>
+			<item value="plugin"/>
+			<item value="value=&quot;${row.title }&quot; "/>
+			<item value="@PostMapping(&quot;/Quiz&quot;)"/>
+			<item value="td"/>
 			<item value="chl"/>
 			<item value="pop"/>
 			<item value="script"/>
@@ -17,14 +23,9 @@
 			<item value="문화서비스"/>
 			<item value="12"/>
 			<item value="ski"/>
-			<item value="스키장"/>
-			<item value="# 스키장 비교 그래프 ㅈㄹ 났네&#x0A;plt.rcParams[&apos;font.family&apos;] =&apos;Malgun Gothic&apos;&#x0A;plt.rcParams[&apos;axes.unicode_minus&apos;] =False&#x0A;&#x0A;gangwon_ski = gangwon_ski[&apos;스키장&apos;][ : 12].sort_index()&#x0A;gangwon_ski.plot(color = &apos;red&apos;)&#x0A;predict[&apos;2023년 강원도 스키장 소비 예측치&apos;].plot(color = &apos;blue&apos;)&#x0A;rc(&apos;font&apos;)"/>
-			<item value="10"/>
-			<item value="# 스키장 예측 결과치"/>
-			<item value="golf"/>
-			<item value="골프장"/>
 		</list>
 		<list key="replacehistory">
+			<item value="th"/>
 			<item value="food"/>
 			<item value="식음료"/>
 			<item value="13"/>
@@ -39,7 +40,6 @@
 			<item value="9"/>
 			<item value="amuse"/>
 			<item value="관광유원시설"/>
-			<item value="8"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

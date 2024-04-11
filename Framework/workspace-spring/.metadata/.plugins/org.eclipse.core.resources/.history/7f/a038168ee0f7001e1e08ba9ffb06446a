@@ -1,0 +1,12 @@
+package Controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class EXController {
+	
+	@GetMapping("/EX02")
+	public void EX02() {};
+	
+}

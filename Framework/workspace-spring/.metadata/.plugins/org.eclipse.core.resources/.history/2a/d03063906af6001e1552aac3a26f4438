@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%
+<html>
+<head>
+<title>Home</title>
+</head>
+<body>
+	<h1>JUnit</h1>
+	<hr>
+	
+	<ul>
+		<li>Java에서 제공하는 단위 테스트
+	</ul>	
+	
+</body>
+</html>

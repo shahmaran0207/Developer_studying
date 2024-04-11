@@ -1,0 +1,18 @@
+package com.itbank.day75;
+
+import org.junit.Test;
+
+public class EX02Test {
+
+	private int num;
+	
+	@org.junit.Before
+	public void seNum() {
+		num=10;
+	}
+	
+	@Test
+	public void run1() {
+		System.out.println("run1 실행");
+	}
+}

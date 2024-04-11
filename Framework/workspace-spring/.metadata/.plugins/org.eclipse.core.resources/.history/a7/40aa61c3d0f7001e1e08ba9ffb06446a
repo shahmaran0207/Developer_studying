@@ -1,0 +1,9 @@
+package com.itbank.day76;
+
+public class test1 {
+	
+	@Test
+	public void test1(){
+		
+	}
+}

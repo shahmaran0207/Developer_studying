@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="EX02 (1)" project="day76" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.itbank.day76.EX02" time="0.0">
+    <testcase name="run1" classname="com.itbank.day76.EX02" time="0.0"/>
+    <testcase name="Quiz1" classname="com.itbank.day76.EX02" time="0.0"/>
+  </testsuite>
+</testrun>

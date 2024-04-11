@@ -118,9 +118,12 @@
 		</section>
 	</section>
 	<section name="NewWizardAction">
-		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="com.springsource.sts.wizard.template"/>
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.springframework.ide.eclipse.beans.ui.wizards.category"/>
+			<item value="org.eclipse.emf.codegen.ecore.ui.wizardCategory"/>
+			<item value="org.eclipse.jdt.ui.java"/>
+			<item value="org.eclipse.jst.j2ee.internal"/>
+			<item value="org.eclipse.wst.jsdt.ui.java"/>
 		</list>
 	</section>
 	<section name="SmartImportWizard">
@@ -129,6 +132,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="E:\12월 전자정부기반 e커머스 융합 sw개발자 박정은\5. 프레임워크 융합 SW 개발\workspace-spring\day74"/>
+			<item value="E:\12월 전자정부기반 e커머스 융합 sw개발자 박정은\5. 프레임워크 융합 SW 개발\workspace-spring\day73"/>
 			<item value="E:\12월 전자정부기반 e커머스 융합 sw개발자 박정은\5. 프레임워크 융합 SW 개발\workspace-spring\day72"/>
 		</list>
 	</section>

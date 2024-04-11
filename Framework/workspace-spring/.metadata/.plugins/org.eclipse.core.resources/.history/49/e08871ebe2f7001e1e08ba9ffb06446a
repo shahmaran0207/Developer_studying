@@ -1,0 +1,9 @@
+package Model;
+
+import org.apache.ibatis.annotations.Select;
+
+public interface BoardDAO {
+	
+	@Select
+	String test();
+}

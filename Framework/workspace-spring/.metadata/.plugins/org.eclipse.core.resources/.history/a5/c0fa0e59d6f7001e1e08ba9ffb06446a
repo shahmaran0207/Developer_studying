@@ -1,0 +1,15 @@
+package com.itbank.day76;
+
+import org.junit.Test;
+
+public class test1 {
+	
+	public int total(int n) {
+		
+	}
+	
+	@Test
+	public void test1(){
+		System.out.println("junit 테스트");
+	}
+}

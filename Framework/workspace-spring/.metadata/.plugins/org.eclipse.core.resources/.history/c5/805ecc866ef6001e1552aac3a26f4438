@@ -1,0 +1,17 @@
+package com.itbank.day75;
+
+import org.junit.Before;
+
+public class EX03Test {
+	private int[] arr1, arr2;
+	private String str1, str2;
+	
+	@Before
+	public void setVariable() {
+		arr1=new int[] {10, 20, 30};
+		arr2=new int[] {10, 20, 30};
+		
+		str1="Hello";
+		str2=new String("hello");
+	}
+}

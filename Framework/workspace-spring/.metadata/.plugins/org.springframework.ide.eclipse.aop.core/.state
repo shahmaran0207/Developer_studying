@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
 <aop-project name="day71"/>
+<aop-project name="day72"/>
+<aop-project name="day73"/>
+<aop-project name="day74"/>
+<aop-project name="day75"/>
+<aop-project name="DI"/>
 </aop-reference-model>

@@ -1,0 +1,34 @@
+package com.itbank.DI;
+
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+import com.itbank.beans.Toy;
+
+// 스프링을 활용한 코드
+public class Ex02 {
+	public static void main(String[] args) {
+		String path = "classpath:appCtx.xml";
+		
+		GenericXmlApplicationContext gxac;
+		gxac = new GenericXmlApplicationContext(path);
+		
+		//Spring이 관리하는 객체를 spring bean이라고 한다.
+		// - 이름이 겹치지 않으면 클래스명 만으로 spring bean을 받을 수 있다.
+		Toy t1 = gxac.getBean(Toy.class);
+		
+		t1.run();
+		
+		//spring bean은 기본 싱글톤 이라는 방식으로 관리되는데
+		Toy t2=gxac.getBean("t1", Toy.class);
+		t2.run();
+		
+		//객체를 요청할 때마다 1개만 생성 후 같은 것을 계속 반환해준다.
+		System.out.println("t1 = " + t1);
+		System.out.println("t2 = " + t2);
+		
+		
+		
+		
+		gxac.close();
+	}
+}

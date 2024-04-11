@@ -1,0 +1,9 @@
+package Model.vo;
+
+import java.sql.Date;
+
+public class BoardVO {
+	private int idx, v_count, user_idx;
+	private String title, contents;
+	private Date w_date;
+}

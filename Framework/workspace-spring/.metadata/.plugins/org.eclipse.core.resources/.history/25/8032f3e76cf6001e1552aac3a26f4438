@@ -1,0 +1,19 @@
+package com.itbank.day75;
+
+import org.aspectj.lang.annotation.Before;
+import org.junit.Test;
+
+public class EX02Test {
+
+	private int num;
+	
+	@Before
+	public void seNum() {
+		
+	}
+	
+	@Test
+	public void run1() {
+		System.out.println("run1 실행");
+	}
+}

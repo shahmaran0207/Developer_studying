@@ -1,0 +1,27 @@
+package com.itbank.day76;
+
+import static org.junit.Assert.assertNotNull;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import Service.TestService;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/spring/root-context.xml"})
+public class EX02 {
+	@Autowired
+	private TestService ts;
+	
+	@Test
+	public void run1() {
+//		System.out.println("ts");
+//		System.out.println(ts.total(10));
+		
+		assertNotNull(ts);
+	}
+	
+}

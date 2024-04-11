@@ -1,0 +1,11 @@
+package com.itbank.day75;
+
+import org.junit.Test;
+
+public class EX01Test {
+	
+	@Test
+	public  void test1() {
+		System.out.println("Junit 코드 테스트");
+	}
+}

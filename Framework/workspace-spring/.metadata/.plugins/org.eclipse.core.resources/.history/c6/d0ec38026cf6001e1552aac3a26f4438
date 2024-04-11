@@ -1,0 +1,29 @@
+package com.itbank.day75;
+
+import org.junit.Test;
+
+public class EX01Test {
+	
+	@Test
+	public  void test1() {
+		System.out.println(this);
+		
+		System.out.println("Junit 코드 테스트");
+		// run: 제대로 실행됨
+		// error: 문법상의 에러
+		// failures: 결과값 != 예측값
+		
+		System.out.println("기초 java에서 배우던 main같은 느낌으로 코드 작성하면 됨");
+	}
+	
+	@Test
+	public void test2() {
+		System.out.println(this);
+		
+		for(int i=0; i<=5; i++) {
+			System.out.printf("%d = Hello Junit\n", i);
+		}
+		
+		
+	}
+}

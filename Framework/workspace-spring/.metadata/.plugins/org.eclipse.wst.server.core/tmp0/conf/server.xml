@@ -160,7 +160,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="E:\12월 전자정부기반 e커머스 융합 sw개발자 박정은\5. 프레임워크 융합 SW 개발\workspace-spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="E:\12월 전자정부기반 e커머스 융합 sw개발자 박정은\5. 프레임워크 융합 SW 개발\workspace-spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\day71" path="/day71" reloadable="true" source="org.eclipse.jst.jee.server:day71"/><Context docBase="E:\12월 전자정부기반 e커머스 융합 sw개발자 박정은\5. 프레임워크 융합 SW 개발\workspace-spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\day72" path="/day72" reloadable="true" source="org.eclipse.jst.jee.server:day72"/></Host>
+      <Context docBase="E:\12월 전자정부기반 e커머스 융합 sw개발자 박정은\5. 프레임워크 융합 SW 개발\workspace-spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="E:\12월 전자정부기반 e커머스 융합 sw개발자 박정은\5. 프레임워크 융합 SW 개발\workspace-spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\day76" path="/day76" reloadable="true" source="org.eclipse.jst.jee.server:day76"/></Host>
     </Engine>
   </Service>
 </Server>

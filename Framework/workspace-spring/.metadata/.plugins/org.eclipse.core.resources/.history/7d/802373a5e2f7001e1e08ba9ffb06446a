@@ -1,0 +1,6 @@
+package Model;
+
+public interface BoardDAO {
+	
+	String test();
+}
