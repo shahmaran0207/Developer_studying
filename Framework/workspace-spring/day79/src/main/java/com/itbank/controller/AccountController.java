@@ -12,8 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.itbank.model.vo.AccountVO;
 import com.itbank.service.AccountService;
 
-import oracle.jdbc.proxy.annotation.Post;
-
 @Controller
 @RequestMapping("/account")
 public class AccountController {
@@ -45,16 +43,16 @@ public class AccountController {
 		
 		return "redirect:/board/list";
 	}
-	
+
 	@GetMapping("/myPage")
-	public void myPage() {};
+	public void myPage() {}
 	
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.removeAttribute("user");
 		
 		return "redirect:/board/list";
-	};
+	}
 	
 	@GetMapping("/signUp")
 	public void signUp() {}
@@ -65,13 +63,26 @@ public class AccountController {
 		
 		return "redirect:/account/login";
 	}
-	
-	@GetMapping("/findpw")
-	public void findpw() {}
-	
-	@PostMapping("/findpw")
-	public String findpw(AccountVO input) {
-		as.findpw(input);
-		return "redirect:message";
+
+	@PostMapping("/myPage")
+	public String update(AccountVO input, HttpSession session) {
+		as.updateAccount(input, session);
+		
+		return "redirect:/account/logout";
 	}
+	
+	@GetMapping("/findPw")
+	public void findPw() {}
+	
+	@PostMapping("/findPw")
+	public ModelAndView findPw(AccountVO input) {
+		ModelAndView mav = new ModelAndView();
+		
+		mav.addObject("msg", as.findPw(input));
+		mav.addObject("path", "/account/login");
+		mav.setViewName("message");
+		
+		return mav;
+	}
+	
 }

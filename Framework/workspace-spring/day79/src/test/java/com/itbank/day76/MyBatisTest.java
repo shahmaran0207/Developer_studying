@@ -31,9 +31,11 @@ public class MyBatisTest {
 	
 	@Test
 	public void selectTest() {
-		Map<String, Object> param=new HashMap<String, Object>();
-		param.put("type",  "title");
+		Map<String, Object> param = new HashMap<>();
+		
+		param.put("type", "title");
 		param.put("search", "안녕");
+		
 		assertNotNull(dao.selectAll(param));
 	}
 
