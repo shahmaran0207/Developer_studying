@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.itbank.components.Paging;
 import com.itbank.model.BoardDAO;
 import com.itbank.model.vo.BoardVO;
+import com.itbank.model.vo.ReplyVO;
 
 @Service
 public class BoardService {
@@ -58,6 +59,18 @@ public class BoardService {
 	public int updateBoard(BoardVO input) {
 		return dao.update(input);
 	}
-	
+
+	public List<ReplyVO> getReplys() {
+		return dao.selectReplyAll();
+	}
+
+	public List<ReplyVO> getReplys(int b_idx) {
+		return dao.selectReplys(b_idx);
+	}
+
+	public int addReply(ReplyVO input) {
+		return dao.insertReply(input);
+		
+	}
 	
 }

@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Select;
 
 import com.itbank.model.vo.BoardVO;
+import com.itbank.model.vo.ReplyVO;
 
 public interface BoardDAO {
 
@@ -30,6 +31,11 @@ public interface BoardDAO {
 
 	@Select("select count(*) from board_view")
 	int totalBoard();
-	
-	int selectserach(Map<String, Object> param);
+
+	@Select("select * from reply_view order by idx desc")
+	List<ReplyVO> selectReplyAll();
+
+	List<ReplyVO> selectReplys(int b_idx);
+
+	int insertReply(ReplyVO input);
 }

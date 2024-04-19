@@ -2,6 +2,8 @@ package com.itbank.controller;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.itbank.model.vo.AccountVO;
 import com.itbank.model.vo.BoardVO;
+import com.itbank.model.vo.ReplyVO;
 import com.itbank.service.BoardService;
 
 @Controller
@@ -53,18 +57,27 @@ public class BoardController {
 	
 	@GetMapping("/view/{idx}")
 	public ModelAndView view(@PathVariable int idx) {
-		
 		ModelAndView mav = new ModelAndView();
 		
 		mav.addObject("row", bs.getboard(idx));
+		mav.addObject("replys", bs.getReplys(idx));
 		mav.setViewName("board/view");
 		
 		return mav;
 	}
+	
+	@PostMapping("/view/{b_idx}")
+	public String writeReply(ReplyVO input, HttpSession session) {
+		AccountVO user=(AccountVO) session.getAttribute("user");
+		input.setU_idx(user.getIdx());
+		
+		bs.addReply(input);
+		
+		return "redirect:/board/view/"+input.getB_idx();
+	}
 
 	@GetMapping("/update/{idx}")
 	public ModelAndView update(@PathVariable int idx) {
-		
 		ModelAndView mav = new ModelAndView();
 		
 		mav.addObject("row", bs.getboard(idx));
@@ -79,5 +92,5 @@ public class BoardController {
 		
 		return "redirect:/board/list";
 	}
-
+	
 }

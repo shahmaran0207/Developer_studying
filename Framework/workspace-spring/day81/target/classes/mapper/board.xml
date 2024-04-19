@@ -15,15 +15,6 @@
 			fetch first #{boardCount} rows only
 	</select>
 	
-		<select id="selectsearch" 
-			parameterType="map"
-			resultType="com.itbank.model.vo.BoardVO">
-			
-		select count(*) from board_view
-			where ${title} like '%${search}%'
-	</select>
-	
-	
 	<!-- 
 		1. #{}
 		- 지정 데이터의 자료형을 파악해 sql문에 채워 실행한다
@@ -49,6 +40,15 @@
 			values(#{title}, #{user_idx}, #{contents})
 	</insert>
 	
+		<insert id="insertReply"
+			parameterType="com.itbank.model.vo.ReplyVO">
+			
+			insert into 
+			reply (b_idx, u_idx, contents)
+			    values(#{b_idx}, #{u_idx}, #{contents})
+	
+	</insert>
+	
 	<update id="update"
 			parameterType="com.itbank.model.vo.BoardVO">
 	
@@ -66,4 +66,12 @@
 			where idx = #{idx}
 	</update>
 	
+	<select id="selectReplys"
+			parameterType="int"
+			resultType="com.itbank.model.vo.ReplyVO">
+		
+		select * from reply_view 
+		    where b_idx = #{b_idx}
+		    order by idx desc
+	</select>
 </mapper>

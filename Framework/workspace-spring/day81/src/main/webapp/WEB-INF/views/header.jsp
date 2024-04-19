@@ -39,6 +39,29 @@
 	.page > li {
 		margin: 0 10px;
 	}
+	.replyWrite {
+		height: 60px;
+		width: 500px;
+		display: flex;
+		border: 1px solid black;
+		box-sizing: border-box;
+	}
+	.replyWrite > * {
+		border: 0;
+		outline: none;
+	}
+	.replyWrite > textarea {
+		resize: none;
+		width: 90%;
+	}
+	.replyWrite > button {
+		width: 10%;
+	} 
+	.reply {
+		margin: 10px 0;
+		width: 500px;
+		box-sizing: border-box;
+	}
 </style>
 </head>
 <body>

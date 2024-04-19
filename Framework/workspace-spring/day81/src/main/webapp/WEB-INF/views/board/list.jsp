@@ -45,7 +45,7 @@
 	
 		<c:forEach var="i" begin="${pg.begin }" end="${pg.end }">
 		<li>
-			<a href="${cpath }/board/list?page=${i }${type}${search}${selectsearch}">
+			<a href="${cpath }/board/list?page=${i }${type}${search}">
 				${i }
 			</a>
 		</li>
