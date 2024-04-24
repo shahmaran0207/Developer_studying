@@ -36,3 +36,8 @@ create view board_view as
         inner join account A
         on b.a_idx=A.idx;
 
+select * from account;
+
+desc account;
+
+commit;
