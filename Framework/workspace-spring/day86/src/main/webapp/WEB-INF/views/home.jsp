@@ -20,7 +20,7 @@
 			<tr>
 				<td>${row.idx }</td>
 				<td><a href="${cpath }/board/view/${row.idx}">
-				${row.title }
+					${row.title }
 				</a></td>
 				<td>${row.nick }</td>
 				<td>${row.v_count }</td>
@@ -29,6 +29,12 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	
+	<br>
+	
+	<a href="${cpath }/board/write">
+		<button>글 작성</button>
+	</a>
 
 </body>
 </html>

@@ -26,7 +26,7 @@ public class RunTimeAOP {
 		Object result = pjp.proceed(args);
 		
 		end = System.currentTimeMillis();
-		msg += " 소요시간 : " + (end - start) / 1000.0;
+		msg += " 소요시간 : " + (end - start) / 1000.0 + "초";
 		
 		log.debug(msg);
 		

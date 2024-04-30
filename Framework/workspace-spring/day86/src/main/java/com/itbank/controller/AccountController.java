@@ -1,5 +1,7 @@
 package com.itbank.controller;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,11 +64,34 @@ public class AccountController {
 	@GetMapping("/myPage")
 	public void myPage() {}
 	
+	@PostMapping("/myPage")
+	public String myPage(AccountVO input, HttpSession session) throws IOException {
+		
+//		System.out.println(input.getUpload().getOriginalFilename());	//getOriginalFilename()도 String 형이므로 null이면 null이라고 뜸
+
+		AccountVO user=(AccountVO) session.getAttribute("user");
+		input.setIdx(user.getIdx());
+		
+		as.profileUpdate(input);
+		
+		return "redirect:/account/logout";
+	}
+	
+	@GetMapping("/signOut")
+	public ModelAndView signOut(HttpSession session) {
+		ModelAndView mav = new ModelAndView("message");
+		
+		mav.addObject("row", 1);
+		mav.addObject("msg", "탈퇴 성공");
+		
+		return mav;
+	}
+	
 	@GetMapping("/signUp")
 	public void signUp() {}
 	
 	@PostMapping("/signUp")
-	public ModelAndView signUp(AccountVO input) {
+	public ModelAndView signUp(AccountVO input) throws IOException {
 		ModelAndView mav = new ModelAndView("message");
 		
 		mav.addObject("row", as.signUp(input));

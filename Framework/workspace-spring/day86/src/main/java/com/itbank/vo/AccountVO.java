@@ -2,20 +2,25 @@ package com.itbank.vo;
 
 import java.sql.Timestamp;
 
+import org.springframework.web.multipart.MultipartFile;
+
 /*
-	IDX    NOT NULL NUMBER        
-	USERID NOT NULL VARCHAR2(20)  
-	USERPW NOT NULL VARCHAR2(128) 
-	NICK   NOT NULL VARCHAR2(60)  
-	EMAIL  NOT NULL VARCHAR2(100) 
+	IDX    		NOT NULL NUMBER        
+	USERID		NOT NULL VARCHAR2(20)  
+	USERPW		NOT NULL VARCHAR2(128) 
+	NICK		NOT NULL VARCHAR2(60)  
+	EMAIL		NOT NULL VARCHAR2(100) 
 	J_DATE           TIMESTAMP(6)
+	profile		NOT NULL NUMBER
+	image	 	프로필 이미지 경로
 */
 
 public class AccountVO {
-	private int idx;
-	private String userid, userpw;
+	private int idx, profile;
+	private String userid, userpw, image;
 	private String nick, email;
 	private Timestamp j_date;
+	private MultipartFile upload;
 	
 	public int getIdx() {
 		return idx;
@@ -52,5 +57,23 @@ public class AccountVO {
 	}
 	public void setJ_date(Timestamp j_date) {
 		this.j_date = j_date;
+	}
+	public int getProfile() {
+		return profile;
+	}
+	public void setProfile(int profile) {
+		this.profile = profile;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
+	public MultipartFile getUpload() {
+		return upload;
+	}
+	public void setUpload(MultipartFile upload) {
+		this.upload = upload;
 	}
 }

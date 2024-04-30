@@ -14,5 +14,11 @@ public interface AccountDAO {
 	AccountVO selectOne(AccountVO input);
 
 	int insert(AccountVO input);
+
+	int selectIdx();
+
+	int update(AccountVO input);
+
+	int signOut(AccountVO input);
 	
 }

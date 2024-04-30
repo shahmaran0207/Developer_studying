@@ -14,16 +14,19 @@ public interface BoardDAO {
 
 	@Select("select * from board_view order by idx desc")
 	List<BoardVO> selectAll();
+
+	@Select("select * from board_view where idx = ${idx}")
+	BoardVO selectOne(int idx);
 	
-	@Select("select * from board_view where idx=${idx}")
-	BoardVO selectone(int idx);
+	@Insert("insert into "
+			+ "board(title, contents, a_idx, upload) "
+			+ "values(#{title}, #{contents}, #{a_idx}, #{upload})")
+	int insert(BoardVO input);
 
-	@Insert("insert into board(nick) values(#{nick})")
-	void insertTest1(String nick);
+	@Select("select idx from board " + 
+				"order by idx desc " + 
+				"offset 0 rows " + 
+				"fetch first 1 rows only")
+	int selectLast();
 	
-	@Insert("insert into board(idx, nick) values(#{idx}, #{nick})")
-	void insertTest2(BoardVO row);
-
-
-
 }

@@ -19,11 +19,11 @@ public class FileController {
 	@Autowired
 	private FileService fs;
 
-	@GetMapping("/EX01")
-	public void EX01() {}
+	@GetMapping("/ex01")
+	public void ex01() {}
 	
-	@PostMapping("/EX01")
-	public void EX01(MultipartFile upload, String memo) {
+	@PostMapping("/ex01")
+	public void ex01(MultipartFile upload, String memo) {
 		System.out.println("memo = " + memo);
 		
 		System.out.println("upload = " + upload);
@@ -33,8 +33,8 @@ public class FileController {
 		System.out.println("크기 : " + upload.getSize());
 	}
 
-	@GetMapping("/EX02")
-	public ModelAndView EX02() throws IOException {
+	@GetMapping("/ex02")
+	public ModelAndView ex02() throws IOException {
 		ModelAndView mav = new ModelAndView();
 		
 		mav.addObject("dir", fs.getDir());
@@ -42,9 +42,10 @@ public class FileController {
 		return mav;
 	}
 
-	@PostMapping("/EX02")
-	public String EX02(MultipartFile upload) throws IOException {
+	@PostMapping("/ex02")
+	public String ex02(MultipartFile upload) throws IOException {
 		fs.fileUpload(upload);
-		return "redirect:/test/EX02";
+		
+		return "redirect:/test/ex02";
 	}
 }

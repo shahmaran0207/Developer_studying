@@ -17,19 +17,17 @@ public class FileService {
 	public File[] getDir() throws IOException {
 		File dir = rs.getFile();
 		
-//		System.out.println(dir.exists());
-//		System.out.println(dir.getAbsolutePath());
-	
+		System.out.println(dir.exists());
+		System.out.println(dir.getAbsolutePath());
 		
 		return dir.listFiles();
 	}
 
 	public void fileUpload(MultipartFile upload) throws IOException {
-		File dir=rs.getFile();
-		File dst=new File(dir, upload.getOriginalFilename());
+		File dir = rs.getFile();
+		File dst = new File(dir, upload.getOriginalFilename());
 		
 		upload.transferTo(dst);
 	}
-
 	
 }

@@ -15,7 +15,7 @@
 		</tr>
 		<tr>
 			<td>
-				<p><a href="${cpath }${row.upload }">
+				<p><a href="${cpath }/fileTest/${row.upload }" download>
 					첨부파일 : ${row.upload }
 				</a></p>
 				<pre>${row.contents }</pre>

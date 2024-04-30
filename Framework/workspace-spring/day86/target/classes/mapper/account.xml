@@ -18,4 +18,23 @@
 			account(userid, userpw, nick, email)
 			values(#{userid}, #{userpw}, #{nick}, #{email})
 	</insert>
+	
+	<select id="selectIdx"
+			resultType="int">
+	
+		select idx from account
+		    order by idx desc
+		    offset 0 rows
+		    fetch first 1 rows only
+	</select>
+
+	<update id="update"
+			parameterType="com.itbank.vo.AccountVO">
+			
+		update account
+			set
+				profile = #{profile},
+				userpw = #{userpw}
+			where idx = #{idx}
+	</update>
 </mapper>
