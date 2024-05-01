@@ -88,17 +88,20 @@ public class AccountService {
 		dao.update(input);
 	}
 
-	public int signOut(AccountVO input) throws LoginException {
+	public int signOut(int idx) throws IOException {
+		int user = dao.signOut(idx);
 
-		int user = dao.signOut(input);
+		if (user != 0) {
+			//1. 현재 계정의 프로필 폴더를 가져온다.
+			File dir = new File(rs.getFile(), idx + "");
 
-		// 일치하는 계정 정보가 없으면 null이 반환된다. 이때 예외를 발생시킨다
-		if (user == 0) {
-			String msg = "로그인 실패. ";
-			msg += "일치하는 정보가 존재하지 않습니다";
+			//2. 그 폴더 안의 모든 파일을 제거한다.
+			for (File file : dir.listFiles()) {
+				file.delete();
+			}
 
-			throw new LoginException(msg);
-
+			//3. 빈 폴더가 되면 폴더를 삭제한다.
+			dir.delete();
 		}
 		return user;
 	}

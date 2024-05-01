@@ -78,10 +78,11 @@ public class AccountController {
 	}
 	
 	@GetMapping("/signOut")
-	public ModelAndView signOut(HttpSession session) {
+	public ModelAndView signOut(HttpSession session) throws LoginException, IOException {
+		AccountVO user=(AccountVO) session.getAttribute("user");
 		ModelAndView mav = new ModelAndView("message");
 		
-		mav.addObject("row", 1);
+		mav.addObject("row", as.signOut(user.getIdx()));
 		mav.addObject("msg", "탈퇴 성공");
 		
 		return mav;

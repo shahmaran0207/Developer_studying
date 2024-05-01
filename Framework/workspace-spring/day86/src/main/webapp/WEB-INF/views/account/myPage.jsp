@@ -40,7 +40,7 @@
 
 	<button>변경</button>
 	<a href="signOut">
-		<button>회원탈퇴</button>
+		<button type="button">회원탈퇴</button>
 	</a>
 </form>
 

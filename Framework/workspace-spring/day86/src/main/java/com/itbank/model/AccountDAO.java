@@ -2,6 +2,7 @@ package com.itbank.model;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Select;
 
 import com.itbank.vo.AccountVO;
@@ -19,6 +20,7 @@ public interface AccountDAO {
 
 	int update(AccountVO input);
 
-	int signOut(AccountVO input);
+	@Delete("delete from account where idx=#{idx}")
+	int signOut(int idx);
 	
 }
