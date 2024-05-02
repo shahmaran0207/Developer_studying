@@ -28,9 +28,9 @@
 
 	<br>
 
-	<button>변경</button>
+	<button class="left">변경</button>
 	<a href="${cpath }/acc/delete/${user.idx}">
-		<button type="button">회원탈퇴</button>
+		<button class="left" type="button">회원탈퇴</button>
 	</a>
 </form>
 
