@@ -60,7 +60,7 @@ public class AccountController {
 	public String delete(@PathVariable int idx) {
 		as.delete(idx);
 		
-		return "redirect:/";
+		return "redirect:/acc/logout";
 	}
 	
 	@GetMapping("/acc/signUp")
