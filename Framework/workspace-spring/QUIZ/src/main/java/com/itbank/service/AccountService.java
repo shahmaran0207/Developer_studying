@@ -13,6 +13,9 @@ import com.itbank.vo.AccountVO;
 public class AccountService {
 	
 	@Autowired
+	private SHA512 sha;
+	
+	@Autowired
 	private AccountDAO dao;
 	
 	public List<AccountVO> getAccounts() {
@@ -29,7 +32,6 @@ public class AccountService {
 	public int signUp(AccountVO input) {
 		return dao.insert(input);
 	}
-
 	
 	public int update(AccountVO input) {
 		return dao.update(input);
@@ -38,5 +40,4 @@ public class AccountService {
 	public int delete(int idx) {
 		return dao.delete(idx);
 	}
-
 }

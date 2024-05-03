@@ -16,7 +16,6 @@ public class SHA512 {
 			md.update(pw.getBytes());
 			
 			String hashPw = String.format("%0128x", new BigInteger(1, md.digest()));
-		
 			return hashPw;
 			
 		} catch (NoSuchAlgorithmException e) {}
