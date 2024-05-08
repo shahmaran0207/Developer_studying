@@ -22,4 +22,8 @@ public class AccountService {
 		return dao.selectOne(input);
 	}
 
+	public AccountVO selectID(String userid) {
+		return dao.selectid(userid);
+	}
+
 }

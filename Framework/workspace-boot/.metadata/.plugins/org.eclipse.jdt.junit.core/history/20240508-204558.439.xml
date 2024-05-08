@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Day94ApplicationTests" project="day94" tests="2" started="2" failures="0" errors="1" ignored="0">
+  <testsuite name="com.itbank.Day94ApplicationTests" time="0.922" displayname="Day94ApplicationTests" uniqueid="[engine:junit-jupiter]/[class:com.itbank.Day94ApplicationTests]">
+    <testcase name="contextLoads" classname="com.itbank.Day94ApplicationTests" time="0.886" displayname="contextLoads()" uniqueid="[engine:junit-jupiter]/[class:com.itbank.Day94ApplicationTests]/[method:contextLoads()]"/>
+    <testcase name="daoTsest" classname="com.itbank.Day94ApplicationTests" time="0.035" displayname="daoTsest()" uniqueid="[engine:junit-jupiter]/[class:com.itbank.Day94ApplicationTests]/[method:daoTsest()]">
+      <error>org.mybatis.spring.MyBatisSystemException&#13;
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:97)&#13;
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)&#13;
+	at jdk.proxy2/jdk.proxy2.$Proxy68.selectOne(Unknown Source)&#13;
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:160)&#13;
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)&#13;
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:141)&#13;
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)&#13;
+	at jdk.proxy2/jdk.proxy2.$Proxy72.test(Unknown Source)&#13;
+	at com.itbank.Day94ApplicationTests.daoTsest(Day94ApplicationTests.java:28)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)&#13;
+Caused by: org.apache.ibatis.exceptions.PersistenceException: &#13;
+### Error querying database.  Cause: java.lang.RuntimeException: Driver oracle.jdbc.driver.OracleDriver claims to not accept jdbcUrl, jdbc;oracle.thin:@192.168.1.100:1521:xe&#13;
+### The error may exist in com/itbank/model/TestDAO.java (best guess)&#13;
+### The error may involve com.itbank.model.TestDAO.test&#13;
+### The error occurred while executing a query&#13;
+### Cause: java.lang.RuntimeException: Driver oracle.jdbc.driver.OracleDriver claims to not accept jdbcUrl, jdbc;oracle.thin:@192.168.1.100:1521:xe&#13;
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)&#13;
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:156)&#13;
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)&#13;
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)&#13;
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:75)&#13;
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)&#13;
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)&#13;
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)&#13;
+	... 10 more&#13;
+Caused by: java.lang.RuntimeException: Driver oracle.jdbc.driver.OracleDriver claims to not accept jdbcUrl, jdbc;oracle.thin:@192.168.1.100:1521:xe&#13;
+	at com.zaxxer.hikari.util.DriverDataSource.&lt;init&gt;(DriverDataSource.java:110)&#13;
+	at com.zaxxer.hikari.pool.PoolBase.initializeDataSource(PoolBase.java:326)&#13;
+	at com.zaxxer.hikari.pool.PoolBase.&lt;init&gt;(PoolBase.java:112)&#13;
+	at com.zaxxer.hikari.pool.HikariPool.&lt;init&gt;(HikariPool.java:93)&#13;
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)&#13;
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:160)&#13;
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:118)&#13;
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81)&#13;
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80)&#13;
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67)&#13;
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:348)&#13;
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:89)&#13;
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:64)&#13;
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)&#13;
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)&#13;
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)&#13;
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90)&#13;
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)&#13;
+	... 18 more&#13;
+&#13;
+</error>
+    </testcase>
+  </testsuite>
+</testrun>

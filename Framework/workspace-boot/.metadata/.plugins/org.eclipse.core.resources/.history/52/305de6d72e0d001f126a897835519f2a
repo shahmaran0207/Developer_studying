@@ -1,0 +1,20 @@
+package com.itbank;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.itbank.service.TestService;
+
+@SpringBootTest
+class Day94ApplicationTests {
+	
+	@Autowired
+	private TestService ts;
+
+	@Test
+	void contextLoads() {
+		System.out.println("ts= "+ts);
+	}
+
+}

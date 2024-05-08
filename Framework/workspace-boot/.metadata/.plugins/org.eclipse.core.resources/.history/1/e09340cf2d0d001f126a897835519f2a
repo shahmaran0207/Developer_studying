@@ -1,0 +1,10 @@
+package com.itbank.service;
+
+public class TestService {
+
+	public int total(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+    <libraryInfo home="E:\12월 전자정부기반 e커머스 융합 sw개발자 박정은\5. 프레임워크 융합 SW 개발\수업 자료\sts-4.22.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.11.v20240426-1830\jre" version="17.0.11"/>
+    <libraryInfo home="C:\Program Files\Java\jdk-1.8" version="1.8.0_381">
+        <bootpath>
+            <entry path="C:\Program Files\Java\jdk-1.8\jre\lib\resources.jar"/>
+            <entry path="C:\Program Files\Java\jdk-1.8\jre\lib\rt.jar"/>
+            <entry path="C:\Program Files\Java\jdk-1.8\jre\lib\jsse.jar"/>
+            <entry path="C:\Program Files\Java\jdk-1.8\jre\lib\jce.jar"/>
+            <entry path="C:\Program Files\Java\jdk-1.8\jre\lib\charsets.jar"/>
+            <entry path="C:\Program Files\Java\jdk-1.8\jre\lib\jfr.jar"/>
+            <entry path="C:\Program Files\Java\jdk-1.8\jre\classes"/>
+        </bootpath>
+        <extensionDirs>
+            <entry path="C:\Program Files\Java\jdk-1.8\jre\lib\ext"/>
+            <entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
+        </extensionDirs>
+        <endorsedDirs>
+            <entry path="C:\Program Files\Java\jdk-1.8\jre\lib\endorsed"/>
+        </endorsedDirs>
+    </libraryInfo>
+    <libraryInfo home="E:\12월 전자정부기반 e커머스 융합 sw개발자 박정은\5. 프레임워크 융합 SW 개발\수업 자료\sts-4.22.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.11.v20240426-1830" version="17.0.11"/>
+</libraryInfos>

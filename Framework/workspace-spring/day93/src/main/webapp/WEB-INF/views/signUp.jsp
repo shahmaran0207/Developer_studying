@@ -15,7 +15,7 @@
 	<p class="result"></p>
 
 	<script>
-	// 패스워드 체크
+		// 패스워드 체크
 		let userpw = document.getElementsByName("userpw");
 		let result = document.querySelector('.result');
 
@@ -33,11 +33,20 @@
 
 			result.innerHTML = msg;
 		}
-		//아이디 중복 검사
-		let userid=document.getElementsByName("userid")[0];
 		
-		userid.onblur=()=>{
-			alert("서버에 id 가 있는지 전송");
+		// 아이디 중복 검사
+		let userid = document.getElementsByName("userid")[0];
+		let result2="중복된 아이디입니다. "
+		
+		userid.onblur = () => {
+			let url = 'checkId?userid=' + userid.value;
+			
+			fetch(url, { method:'GET' })
+			.then(response => response.json())
+			.then(data => {
+				if (data ==0) result2="사용가능한 아이디입니다."
+				alert('결과 : ' + result2);
+			});
 		}
 
 	</script>

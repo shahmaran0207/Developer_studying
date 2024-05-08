@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+</head>
+<body>
+	<h1>JSP 설정</h1>
+	
+	<ul>
+		<li><a href="/EX01">EX01</a></li>
+		<li><a href="/EX02">EX02</a></li>
+		<li><a href="/account/list">list</a></li>
+	</ul>
+
+	<c:forEach var="i" begin="1" end="5">
+		<h1>${i }: JSP 테스트</h1>
+	</c:forEach>
+
+</body>
+</html>

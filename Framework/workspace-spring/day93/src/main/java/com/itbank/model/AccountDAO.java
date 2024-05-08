@@ -17,4 +17,7 @@ public interface AccountDAO {
 			+ "where userid = #{userid} "
 			+ "and userpw = #{userpw}")
 	AccountVO selectOne(AccountVO input);
+
+	@Select("select * from account where userid=#{userid}")
+	AccountVO selectid(String userid);
 }
