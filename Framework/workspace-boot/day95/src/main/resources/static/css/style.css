@@ -29,4 +29,10 @@ table textarea {
 	min-height: 300px;
 	resize: none;
 }
-
+.search {
+	margin-bottom: 10px; 
+	display: flex;
+}
+.search > *:nth-child(n + 2) {
+	margin-left: -1px;
+}
