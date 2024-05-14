@@ -1,0 +1,14 @@
+package com.itbank.vo;
+
+import java.sql.Date;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class BoardVO {
+	private int idx, v_count;
+	private String title, nick, contents;
+	private Date w_date;
+}

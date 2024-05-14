@@ -1,0 +1,31 @@
+package com.itbank.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.itbank.vo.Person;
+
+import jakarta.servlet.http.HttpServletRequest;
+
+@Controller
+@RequestMapping("/account")
+public class AccountController {
+
+	@GetMapping("/")
+	public String home() {
+		return "home";
+	}
+
+	@GetMapping("/EX01")
+	public ModelAndView EX01() {
+		ModelAndView mav = new ModelAndView();
+
+		mav.addObject("subject", "파라미터");
+
+		return mav;
+	}
+	
+}

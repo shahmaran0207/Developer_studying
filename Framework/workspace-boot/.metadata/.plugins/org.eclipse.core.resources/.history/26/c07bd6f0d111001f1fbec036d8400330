@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: day98
+
+  mvc:
+    view:
+      suffix: .html
+
+server:
+  port: 8085

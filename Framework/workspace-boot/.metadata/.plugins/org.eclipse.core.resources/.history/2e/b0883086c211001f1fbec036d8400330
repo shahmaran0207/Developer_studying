@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>home</title>
+</head>
+<body>
+	<h1 th:>Hello Boot!</h1>
+	
+	<!--  with:  태그 사이에 변수를 선언하고 사용 가능 -->
+
+</body>
+</html>

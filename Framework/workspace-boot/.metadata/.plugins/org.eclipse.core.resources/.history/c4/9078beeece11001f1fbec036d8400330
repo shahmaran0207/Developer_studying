@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+	<header th:replace="~{piece :: header}"></header>
+
+	<h4>EX03 - 조건문</h4>
+	
+	<p th:text="${age}">
+	<p th:text="${age >=20}">
+	<p th:if="${age >= 20}" th:text="성인">
+	<p th:if="${age < 20}" th:text="미성년자">
+
+	<!-- if는 조건이 ture면 수행. false면 아예 실행하지 않음 -->
+	<div th:if="${age>=20}">
+		<span th:text="${age}"></span>
+		<span>세는 성인입니다.</span>
+	</div>
+	
+	<p>※ th:unless는 조건이 거짓일때 수행하는 구문</p>
+	
+	<footer th:replace="~{piece :: footer}"></footer>
+
+</body>
+</html>

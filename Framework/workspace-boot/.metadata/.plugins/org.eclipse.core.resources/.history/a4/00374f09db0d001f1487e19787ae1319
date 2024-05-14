@@ -1,0 +1,9 @@
+package com.itbank.vo;
+
+import java.sql.Date;
+
+public class BoardVO {
+	private int idx, v_count;
+	private String title, nick, contents;
+	private Date w_date;
+}

@@ -1,0 +1,7 @@
+package com.itbank.vo;
+
+public class BoardVO {
+	private int idx, v_count;
+	private String title, nick, contents;
+	private date w_date;
+}

@@ -1,0 +1,69 @@
+package com.itbank.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.itbank.vo.Person;
+
+import jakarta.servlet.http.HttpServletRequest;
+
+@Controller
+public class HomeController {
+
+	@GetMapping("/")
+	public String home() {
+		return "home";
+	}
+
+	@GetMapping("/EX01")
+	public ModelAndView EX01() {
+		ModelAndView mav = new ModelAndView();
+
+		mav.addObject("subject", "파라미터");
+
+		return mav;
+	}
+
+	@PostMapping("/EX01")
+	public ModelAndView EX01(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView();
+
+		String name = request.getParameter("name");
+		int age = Integer.parseInt(request.getParameter("age"));
+
+		mav.addObject("msg", name + "님은 " + age + "세");
+		mav.setViewName("EX01_result");
+
+		return mav;
+	}
+	
+	@GetMapping("/EX02")
+	public ModelAndView EX02() {
+		ModelAndView mav = new ModelAndView();
+
+		mav.addObject("per", new Person("홍길동", 33, 176));
+		
+		return mav;
+	}
+	
+	@GetMapping("/EX03")
+	public ModelAndView EX03() {
+		ModelAndView mav = new ModelAndView();
+
+		mav.addObject("age", 20);
+		
+		return mav;
+	}
+	
+	@GetMapping("/EX04")
+	public ModelAndView EX04() {
+		ModelAndView mav = new ModelAndView();
+
+		mav.addObject("age", 20);
+		
+		return mav;
+	}
+	
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+	<header th:replace="~{piece :: header}"></header>
+
+<h4>EX03 - 조건문</h4>	
+
+	<footer th:replace="~{piece :: footer}"></footer>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<header th:replace="~{piece :: header}"></header>
+
+	<h4 th:text="${subject}"></h4>
+
+	<footer th:replace="~{piece :: footer}"></footer>
+
+</body>
+</html>

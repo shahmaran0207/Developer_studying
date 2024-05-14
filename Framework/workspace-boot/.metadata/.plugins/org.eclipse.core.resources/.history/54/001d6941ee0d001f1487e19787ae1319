@@ -1,0 +1,36 @@
+package com.itbank.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.itbank.model.BoardDAO;
+import com.itbank.vo.BoardVO;
+
+@Service
+public class BoardService {
+
+	@Autowired
+	private BoardDAO dao;
+	
+	public List<BoardVO> getBoard_view() {
+		return dao.selectAll();
+	}
+
+	public BoardVO getselectOne(int idx) {
+		return dao.selectOne(idx);
+	}
+
+	public int delete(int idx) {
+		return dao.delete(idx);
+	}
+
+	public int add(BoardVO input) {
+		return dao.add(input);
+	}
+
+	public int update(int idx, BoardVO input) {
+		return dao.update(idx, input);
+	}
+
+}

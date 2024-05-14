@@ -1,0 +1,10 @@
+package com.itbank.service;
+
+public class BoardService {
+
+	public Object getBoard_view() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+	<header th:replace="~{piece :: header}"></header>
+
+	<h4>Account 테이블</h4>
+
+	<table>
+		<tr>
+			<th>계정번호</th>
+			<th>아이디</th>
+			<th>패스워드</th>
+			<th>닉네임</th>
+			<th>이메일</th>
+			<th>가입일</th>
+		</tr>
+		
+		<c:forEach var="row" items="${list }">
+		<tr>
+			<td>${row.idx }</td>
+			<td>${row.userid }</td>
+			<td>${fn:substring(row.userpw, 0, 12) }</td>
+			<td>${row.nick }</td>
+			<td>${row.email }</td>
+			<td>${row.j_date }</td>
+		</tr>
+		</c:forEach>
+	</table>
+
+	<footer th:replace="~{piece :: footer}"></footer>
+
+</body>
+</html>
